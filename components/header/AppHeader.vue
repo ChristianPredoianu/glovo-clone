@@ -7,26 +7,44 @@ function toggleNav() {
 </script>
 
 <template>
-  <header class="bg-red-500 py-4">
-    <nav class="container mx-auto px-2 sm:px-0">
-      <p>Glovo</p>
-      <div @click="toggleNav" class="md:hidden">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 20 20"
-          fill="currentColor"
-          class="w-8 h-8"
+  <header>
+    <nav class="flex items-center justify-between flex-wrap container mx-auto p-4">
+      <span class="font-semibold text-yellow-400 text-xl">Glovo</span>
+      <div class="block sm:hidden">
+        <button
+          @click="toggleNav"
+          class="flex items-center px-3 py-2 border rounded text-black border-teal-light"
         >
-          <path
-            fill-rule="evenodd"
-            d="M2 4.75A.75.75 0 012.75 4h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 4.75zm0 10.5a.75.75 0 01.75-.75h7.5a.75.75 0 010 1.5h-7.5a.75.75 0 01-.75-.75zM2 10a.75.75 0 01.75-.75h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 10z"
-            clip-rule="evenodd"
-          />
-        </svg>
+          <svg
+            class="fill-current h-3 w-3"
+            viewBox="0 0 20 20"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <title>Menu</title>
+            <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
+          </svg>
+        </button>
       </div>
-      <div :class="{ hidden: !isNavOpen, flex: isNavOpen }" class="md:flex">
-        <ul>
-          <li>Home</li>
+      <div
+        :class="[isNavOpen ? ['block', 'translate-x-0'] : 'hidden']"
+        class="w-full -translate-x-full flex-grow sm:flex sm:items-center sm:w-auto min-h-screen sm:min-h-0 transition ease-in-out delay-150"
+      >
+        <ul class="text-sm sm:flex-grow px-6">
+          <li
+            class="block mt-4 sm:inline-block sm:mt-0 text-teal-lighter hover:text-white mr-4"
+          >
+            Docs
+          </li>
+          <li
+            class="block mt-4 sm:inline-block sm:mt-0 text-teal-lighter hover:text-white mr-4"
+          >
+            Docs
+          </li>
+          <li
+            class="block mt-4 sm:inline-block sm:mt-0 text-teal-lighter hover:text-white mr-4"
+          >
+            Docs
+          </li>
         </ul>
       </div>
     </nav>
