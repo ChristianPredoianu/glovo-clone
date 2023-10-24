@@ -1,12 +1,11 @@
 <script setup lang="ts">
-import { ref } from 'vue';
-
-const isBackdropOpen = ref(false);
+const { isBackdropOpen, closeNav } = useNavState();
 </script>
 
 <template>
   <div
-    class="absolute inset-0 min-h-screen w-full bg-slate-200 z-50 opacity-50"
+    class="absolute inset-0 min-h-screen w-full bg-slate-800 z-40 opacity-50"
     v-if="isBackdropOpen"
+    @click="closeNav"
   ></div>
 </template>
