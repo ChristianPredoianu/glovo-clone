@@ -15,7 +15,7 @@ function toggleNav() {
       <div class="block sm:hidden">
         <button
           @click="toggleNav"
-          class="relative z-10 flex items-center px-3 py-2 border rounded text-black border-teal-light"
+          class="relative flex items-center px-3 py-2 border rounded text-black border-teal-light"
         >
           <svg
             class="fill-current h-3 w-3"
@@ -29,7 +29,7 @@ function toggleNav() {
       </div>
       <div
         :class="isNavOpen ? ['translate-x-[0rem]'] : ['-translate-x-[50rem]']"
-        class="absolute top-0 left-0 sm:relative w-4/5 nav-list-div min-h-screen sm:min-h-full flex-grow bg-red-500 py-4 sm:py-0 sm:flex sm:items-center sm:translate-x-0 sm:ml-4 sm:w-auto transition ease-in-out delay-150"
+        class="absolute top-0 rounded-r-2xl sm:rounded-r-none left-0 sm:relative w-11/12 nav-list-div min-h-screen sm:min-h-full flex-grow bg-white py-4 sm:py-0 sm:flex sm:items-center sm:translate-x-0 sm:ml-4 sm:w-auto transition ease-in-out delay-150"
       >
         <ul class="text-sm flex flex-col sm:flex-row">
           <li class="block sm:inline-block text-teal-lighter hover:text-white mr-4">
