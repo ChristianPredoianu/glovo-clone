@@ -1,8 +1,6 @@
-import { ref } from 'vue';
-
 export function useNavState() {
-  const isNavOpen = ref(false);
-  const isBackdropOpen = ref(false);
+  const isNavOpen = useState('isNavOpen', () => false);
+  const isBackdropOpen = useState('isBackdropOpen', () => true);
 
   function openNav() {
     isNavOpen.value = true;
