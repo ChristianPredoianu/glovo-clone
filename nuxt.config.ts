@@ -6,5 +6,8 @@ export default defineNuxtConfig({
     // Options
     families: {},
   },
-  components: [{ path: '@/components/header', extensions: ['vue'] }],
+  components: [
+    { path: '@/components/header', extensions: ['vue'] },
+    { path: '@/components/ui', extensions: ['vue'] },
+  ],
 });
