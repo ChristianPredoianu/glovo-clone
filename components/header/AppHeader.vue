@@ -9,7 +9,7 @@ function toggleNav() {
 </script>
 
 <template>
-  <header class="hello">
+  <header class="relative">
     <nav class="flex items-center justify-between flex-wrap container mx-auto p-4">
       <span class="font-semibold text-yellow-400 text-xl">Glovo</span>
       <div class="block sm:hidden">
@@ -29,9 +29,9 @@ function toggleNav() {
       </div>
       <div
         :class="isNavOpen ? ['translate-x-[0rem]'] : ['-translate-x-[50rem]']"
-        class="nav-list-div relative w-full flex-grow bg-red-500 py-4 sm:py-0 sm:flex sm:items-center sm:translate-x-0 sm:ml-4 sm:w-auto transition ease-in-out delay-150"
+        class="absolute top-0 left-0 sm:relative w-4/5 nav-list-div min-h-screen sm:min-h-full flex-grow bg-red-500 py-4 sm:py-0 sm:flex sm:items-center sm:translate-x-0 sm:ml-4 sm:w-auto transition ease-in-out delay-150"
       >
-        <ul class="text-sm flex flex-col items-center sm:flex-grow">
+        <ul class="text-sm flex flex-col sm:flex-row">
           <li class="block sm:inline-block text-teal-lighter hover:text-white mr-4">
             Docs
           </li>
