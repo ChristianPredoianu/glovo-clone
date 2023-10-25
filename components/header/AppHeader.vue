@@ -1,51 +1,18 @@
 <script setup lang="ts">
-import { ref } from 'vue';
-
-const isNavOpen = ref(false);
-
-function toggleNav() {
-  isNavOpen.value = !isNavOpen.value;
-}
+const { isNavOpen, closeNav } = useNav();
+useBackdrop(closeNav);
 </script>
 
 <template>
-  <header class="relative">
+  <header class="relative bg-yellow-300">
     <nav class="flex items-center justify-between flex-wrap container mx-auto p-4">
-      <span class="font-semibold text-yellow-400 text-xl">Glovo</span>
-      <div class="block sm:hidden">
-        <button
-          @click="toggleNav"
-          class="relative flex items-center px-3 py-2 border rounded text-black border-teal-light"
-        >
-          <svg
-            class="fill-current h-3 w-3"
-            viewBox="0 0 20 20"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <title>Menu</title>
-            <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
-          </svg>
-        </button>
-      </div>
+      <span class="font-semibold text-green-500 text-xl">GlovoApp</span>
+      <Hamburger />
       <div
         :class="isNavOpen ? ['translate-x-[0rem]'] : ['-translate-x-[50rem]']"
-        class="absolute top-0 rounded-r-2xl sm:rounded-r-none left-0 sm:relative w-11/12 nav-list-div min-h-screen sm:min-h-full flex-grow bg-white py-4 sm:py-0 sm:flex sm:items-center sm:translate-x-0 sm:ml-4 sm:w-auto transition ease-in-out delay-150"
+        class="absolute z-50 top-0 rounded-r-2xl sm:rounded-r-none left-0 sm:relative w-10/12 nav-list-div min-h-screen sm:min-h-full flex-grow bg-white py-4 sm:py-0 sm:flex sm:items-center sm:translate-x-0 sm:ml-4 sm:w-auto transition ease-in-out"
       >
-        <ul class="text-sm flex flex-col sm:flex-row">
-          <li class="block sm:inline-block text-teal-lighter hover:text-white mr-4">
-            Docs
-          </li>
-          <li
-            class="block mt-4 sm:inline-block sm:mt-0 text-teal-lighter hover:text-white mr-4"
-          >
-            Docs
-          </li>
-          <li
-            class="block mt-4 sm:inline-block sm:mt-0 text-teal-lighter hover:text-white mr-4"
-          >
-            Docs
-          </li>
-        </ul>
+        <NavList />
       </div>
     </nav>
   </header>
