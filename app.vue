@@ -1,13 +1,7 @@
-<script setup lang="ts">
-function dsa(isNavOpen: Ref<boolean>) {
-  console.log(isNavOpen.value);
-}
-</script>
+<script setup lang="ts"></script>
 
 <template>
-  <div>
-    <Backdrop />
-    <AppHeader @updateIsNavOpen="dsa" />
-    <NuxtPage />
-  </div>
+  <Backdrop />
+  <AppHeader />
+  <NuxtPage />
 </template>
